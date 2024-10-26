@@ -1,25 +1,46 @@
-var builder = WebApplication.CreateBuilder(args);
+using SignalR_Back.Hubs;
 
-// Add services to the container.
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+#region ConfigureServices
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddSignalR();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactApp",
+        builder =>
+        {
+            _ = builder
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
+        });
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+#endregion
 
-// Configure the HTTP request pipeline.
+WebApplication app = builder.Build();
+
+#region Configure
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    _ = app.UseSwagger();
+    _ = app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
+app.MapHub<LineChartHub>("/LineChartHub");
+app.MapHub<PieChartHub>("/PieChartHub");
+app.MapHub<SolidHub>("/SolidHub");
+app.MapHub<SpeedometerHub>("/SpeedometerHub");
+app.MapHub<TextHub>("/TextHub");
+app.UseCors("ReactApp");
 app.Run();
+
+#endregion
