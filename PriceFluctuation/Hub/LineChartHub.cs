@@ -1,15 +1,11 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
-namespace SignalR_Back.Hubs;
-public class SpeedometerHub : Hub
+namespace PriceFluctuation.Hub;
+public class LineChartHub : Microsoft.AspNetCore.SignalR.Hub
 {
     private readonly Random random = new();
 
-    /// <summary>
-    /// This Data Chart Is Updated Every 15 Second 
-    /// </summary>
-    /// <returns> Send Random Data To Solid Chart </returns>
-    public async Task SendRandomDataToSpeedometerChart()
+    public async Task SendRandomDataToLineChart()
     {
         int number;
         while (true)
@@ -17,7 +13,7 @@ public class SpeedometerHub : Hub
             number = random.Next(0, 500);
             Console.WriteLine($"Sending random number: {number}");
             await Clients.All.SendAsync("RandomData", number);
-            await Task.Delay(15000);
+            await Task.Delay(1000);
         }
     }
 }

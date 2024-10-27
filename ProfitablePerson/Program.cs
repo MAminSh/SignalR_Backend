@@ -1,8 +1,4 @@
-using SignalR_Back.Hubs.LineChart;
-using SignalR_Back.Hubs.PieChart;
-using SignalR_Back.Hubs.SolidChart;
-using SignalR_Back.Hubs.SpeedometerChart;
-using SignalR_Back.Hubs.Text;
+using ProfitablePerson.Hub;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +12,7 @@ builder.Services.AddCors(options =>
         builder =>
         {
             _ = builder
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins("Front URL Address")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
@@ -39,10 +35,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 app.MapControllers();
-app.MapHub<LineChartHub>("/LineChartHub");
-app.MapHub<PieChartHub>("/PieChartHub");
-app.MapHub<SolidHub>("/SolidHub");
-app.MapHub<SpeedometerHub>("/SpeedometerHub");
 app.MapHub<TextHub>("/TextHub");
 app.UseCors("ReactApp");
 app.Run();

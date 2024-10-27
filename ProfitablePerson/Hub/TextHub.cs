@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR;
-
-namespace SignalR_Back.Hubs;
-public class TextHub : Hub
+﻿namespace ProfitablePerson.Hub;
+public class TextHub : Microsoft.AspNetCore.SignalR.Hub
 {
     private readonly Random random = new();
     private const string CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";

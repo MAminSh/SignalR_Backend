@@ -1,0 +1,6 @@
+@ProfitablePerson_HostAddress = http://localhost:5010
+
+GET {{ProfitablePerson_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

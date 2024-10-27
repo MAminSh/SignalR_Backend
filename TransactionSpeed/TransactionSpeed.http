@@ -1,0 +1,6 @@
+@TransactionSpeed_HostAddress = http://localhost:5034
+
+GET {{TransactionSpeed_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

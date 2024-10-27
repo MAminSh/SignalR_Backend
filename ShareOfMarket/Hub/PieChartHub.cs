@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
-namespace SignalR_Back.Hubs;
-public class PieChartHub : Hub
+namespace ShareOfMarket.Hub;
+public class PieChartHub : Microsoft.AspNetCore.SignalR.Hub
 {
     private readonly Random random = new();
 
-    /// <summary>
-    /// This Data Chart Is Updated Every 5 Second 
-    /// </summary>
-    /// <returns> Send Random Data To Pie Chart </returns>
     public async Task SendRandomDataToPieChart()
     {
         int number;
