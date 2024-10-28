@@ -1,4 +1,4 @@
-using ProfitablePerson.Hub;
+using ProfitablePerson.ChartHub;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

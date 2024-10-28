@@ -1,4 +1,4 @@
-using PriceFluctuation.Hub;
+using PriceFluctuation.ChartHub;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

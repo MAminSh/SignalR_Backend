@@ -1,4 +1,4 @@
-using ProfitAndLoss.Hub;
+using ProfitAndLoss.ChartHub;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

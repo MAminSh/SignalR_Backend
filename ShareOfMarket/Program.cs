@@ -1,9 +1,10 @@
-using ShareOfMarket.Hub;
+using ShareOfMarket.ChartHub;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 #region ConfigureServices
 
+builder.Services.AddControllers();
 builder.Services.AddSignalR();
 builder.Services.AddCors(options =>
 {
@@ -18,6 +19,7 @@ builder.Services.AddCors(options =>
         });
 });
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 #endregion
 
@@ -25,9 +27,14 @@ WebApplication app = builder.Build();
 
 #region Configure
 
-
+if (app.Environment.IsDevelopment())
+{
+    _ = app.UseSwagger();
+    _ = app.UseSwaggerUI();
+}
 
 app.UseAuthorization();
+app.MapControllers();
 app.MapHub<PieChartHub>("/PieChartHub");
 app.UseCors("ReactApp");
 app.Run();

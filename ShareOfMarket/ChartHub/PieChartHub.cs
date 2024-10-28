@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
-namespace ShareOfMarket.Hub;
-public class PieChartHub : Microsoft.AspNetCore.SignalR.Hub
+namespace ShareOfMarket.ChartHub;
+public class PieChartHub : Hub
 {
     private readonly Random random = new();
 

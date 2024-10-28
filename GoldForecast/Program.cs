@@ -1,4 +1,4 @@
-using GoldForecast.Hub;
+using GoldForecast.ChartHub;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -24,8 +24,6 @@ builder.Services.AddEndpointsApiExplorer();
 WebApplication app = builder.Build();
 
 #region Configure
-
-
 
 app.UseAuthorization();
 app.MapHub<ForecastHub>("/forecasthub");

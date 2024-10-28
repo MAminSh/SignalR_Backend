@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
-namespace ProfitAndLoss.Hub
+namespace ProfitAndLoss.ChartHub
 {
-    public class BarHub : Microsoft.AspNetCore.SignalR.Hub
+    public class BarHub : Hub
     {
         private readonly int[] _joan = new int[3];
         private readonly int[] _jain = new int[3];
