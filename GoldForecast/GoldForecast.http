@@ -1,0 +1,6 @@
+@GoldForecast_HostAddress = http://localhost:5279
+
+GET {{GoldForecast_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

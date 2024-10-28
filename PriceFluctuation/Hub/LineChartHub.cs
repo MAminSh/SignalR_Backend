@@ -10,10 +10,15 @@ public class LineChartHub : Microsoft.AspNetCore.SignalR.Hub
         int number;
         while (true)
         {
-            number = random.Next(0, 500);
-            Console.WriteLine($"Sending random number: {number}");
-            await Clients.All.SendAsync("RandomData", number);
-            await Task.Delay(1000);
+            number = random.Next(0, 100);
+            Console.WriteLine("".PadRight(70, '-'));
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Log From LineChart :");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write($" Sending Random Data Is : {number} ");
+            Console.ForegroundColor = ConsoleColor.White;
+            await Clients.All.SendAsync("SendRandomDataToLineChart", number);
+            await Task.Delay(5000);
         }
     }
 }
