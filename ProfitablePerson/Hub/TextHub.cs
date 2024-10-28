@@ -22,15 +22,14 @@ public class TextHub : Microsoft.AspNetCore.SignalR.Hub
 
     public async Task SendRandomText()
     {
-        Console.WriteLine("".PadRight(70, '-'));
-        Console.ForegroundColor = ConsoleColor.DarkGreen;
-        int randomIndex = random.Next(names.Count);
-        string randomName = names[randomIndex];
-        Console.WriteLine("Log From Text :");
-        Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.Write($" The Value Is : {randomName} ");
-        Console.ForegroundColor = ConsoleColor.White;
-        await Clients.All.SendAsync("SendRandomText", randomName);
-        await Task.Delay(1000);
+        while (true)
+        {
+            
+            int randomIndex = random.Next(names.Count);
+            string randomName = names[randomIndex];
+            Console.WriteLine($" The Value Is : {randomName} ");
+            await Clients.All.SendAsync("SendText", randomName);
+            await Task.Delay(1000);
+        }
     }
 }
