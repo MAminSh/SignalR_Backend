@@ -28,7 +28,7 @@ WebApplication app = builder.Build();
 
 
 app.UseAuthorization();
-app.MapHub<BarHub>("/barhub");
+app.MapHub<ProfitAndLossHub>("/barhub");
 app.UseCors("ReactApp");
 app.Run();
 

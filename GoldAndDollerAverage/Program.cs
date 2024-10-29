@@ -11,7 +11,7 @@ builder.Services.AddCors(options =>
         builder =>
         {
             _ = builder
-            .WithOrigins("Front URL Address")
+            .WithOrigins("http://localhost:5173")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
@@ -26,7 +26,7 @@ WebApplication app = builder.Build();
 #region Configure
 
 app.UseAuthorization();
-app.MapHub<AvarageChartHub>("/avaragecharthub");
+app.MapHub<PriceAvgChartHub>("/avaragecharthub");
 app.UseCors("ReactApp");
 app.Run();
 

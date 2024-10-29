@@ -28,7 +28,7 @@ WebApplication app = builder.Build();
 
 
 app.UseAuthorization();
-app.MapHub<TextHub>("/textHub");
+app.MapHub<ProfitablePersonHub>("/textHub");
 app.UseCors("ReactApp");
 app.Run();
 

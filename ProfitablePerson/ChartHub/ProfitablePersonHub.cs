@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 
 namespace ProfitablePerson.ChartHub;
-public class TextHub : Hub
+public class ProfitablePersonHub : Hub
 {
     private readonly Random random = new();
     private readonly List<string> names =
@@ -18,14 +18,13 @@ public class TextHub : Hub
             "Yasser", "Yousef", "Vahid", "Mohsen", "Manoochehr", "Mahin", "Soroosh", "Peyman", "Farid", "Farshad"
         ];
 
-    public async Task SendRandomText()
+    public async Task SendProfitablePerson()
     {
         while (true)
         {
             int randomIndex = random.Next(names.Count);
             string randomName = names[randomIndex];
-            Console.WriteLine($" The Value Is : {randomName} ");
-            await Clients.All.SendAsync("SendText", randomName);
+            await Clients.All.SendAsync("SendProfName", randomName);
             await Task.Delay(1000);
         }
     }
