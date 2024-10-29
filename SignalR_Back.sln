@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareOfMarket", "ShareOfMar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriceFluctuation", "PriceFluctuation\PriceFluctuation.csproj", "{9E35BDD3-F4B3-4259-AE43-2830E9334421}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitablePerson", "ProfitablePerson\ProfitablePerson.csproj", "{C12E71AB-C6AD-48E8-830F-B7E4591DB40C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfitablePerson", "ProfitablePerson\ProfitablePerson.csproj", "{C12E71AB-C6AD-48E8-830F-B7E4591DB40C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfitAndLoss", "ProfitAndLoss\ProfitAndLoss.csproj", "{16223D62-2352-4061-8A3E-120652AD4C03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProfitAndLoss", "ProfitAndLoss\ProfitAndLoss.csproj", "{16223D62-2352-4061-8A3E-120652AD4C03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldForecast", "GoldForecast\GoldForecast.csproj", "{E22E18CA-B120-4E59-8537-4CEAD21FCBEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldAndDollerAverage", "GoldAndDollerAverage\GoldAndDollerAverage.csproj", "{36780CDA-BBD4-4C3E-815A-A4856FC259C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{16223D62-2352-4061-8A3E-120652AD4C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16223D62-2352-4061-8A3E-120652AD4C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16223D62-2352-4061-8A3E-120652AD4C03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E22E18CA-B120-4E59-8537-4CEAD21FCBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E22E18CA-B120-4E59-8537-4CEAD21FCBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E22E18CA-B120-4E59-8537-4CEAD21FCBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E22E18CA-B120-4E59-8537-4CEAD21FCBEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36780CDA-BBD4-4C3E-815A-A4856FC259C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36780CDA-BBD4-4C3E-815A-A4856FC259C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36780CDA-BBD4-4C3E-815A-A4856FC259C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36780CDA-BBD4-4C3E-815A-A4856FC259C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

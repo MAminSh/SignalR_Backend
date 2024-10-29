@@ -1,0 +1,6 @@
+@GoldAndDollerAverage_HostAddress = http://localhost:5282
+
+GET {{GoldAndDollerAverage_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

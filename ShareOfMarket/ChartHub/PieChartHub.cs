@@ -5,9 +5,12 @@ public class PieChartHub : Hub
 {
     private readonly Random random = new();
 
+
     public async Task SendRandomDataToPieChart()
     {
         int number;
+        double bitcoin = 57;
+
         while (true)
         {
             number = random.Next(0, 500);
