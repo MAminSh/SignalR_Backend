@@ -27,8 +27,7 @@ public class ShareOfMarketHub : Hub
                 };
             }
 
-            Console.WriteLine($" Sending random number ");
-            await Clients.All.SendAsync("SendShareOfMarketData", _cryptocurrencies);
+            await Clients.Caller.SendAsync("SendShareOfMarketData", _cryptocurrencies);
             await Task.Delay(5000);
         }
     }

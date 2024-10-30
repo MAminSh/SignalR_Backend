@@ -24,8 +24,8 @@ public class ProfitablePersonHub : Hub
         {
             int randomIndex = random.Next(names.Count);
             string randomName = names[randomIndex];
-            await Clients.All.SendAsync("SendProfName", randomName);
-            await Task.Delay(1000);
+            await Clients.Caller.SendAsync("SendProfName", randomName);
+            await Task.Delay(2000);
         }
     }
 }

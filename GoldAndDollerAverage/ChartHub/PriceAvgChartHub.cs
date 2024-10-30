@@ -17,7 +17,7 @@ namespace GoldAndDollerAverage.ChartHub
                     _doller[i] = random.Next(1, 20);
                     _gold[i] = random.Next(40, 60);
                 }             
-                await Clients.All.SendAsync("SendDataAvg", _doller, _gold);
+                await Clients.Caller.SendAsync("SendDataAvg", _doller, _gold);
                 await Task.Delay(5000);
             }
         }

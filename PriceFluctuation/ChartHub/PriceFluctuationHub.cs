@@ -10,8 +10,8 @@ public class PriceFluctuationHub : Hub
         int number;
         while (true)
         {
-            number = random.Next(0, 100);
-            await Clients.All.SendAsync("SendRandomFluctuation", number);
+            number = random.Next(15, 100);
+            await Clients.Caller.SendAsync("SendRandomFluctuation", number);
             await Task.Delay(10000);
         }
     }
