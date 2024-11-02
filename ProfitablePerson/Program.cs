@@ -5,6 +5,8 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 #region ConfigureServices
 
 builder.Services.AddSignalR();
+builder.Services.AddSingleton<Random>();
+builder.Services.AddScoped<ProfitablePersonHub>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp",
@@ -24,8 +26,6 @@ builder.Services.AddEndpointsApiExplorer();
 WebApplication app = builder.Build();
 
 #region Configure
-
-
 
 app.UseAuthorization();
 app.MapHub<ProfitablePersonHub>("/textHub");

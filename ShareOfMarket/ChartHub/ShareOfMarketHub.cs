@@ -17,7 +17,7 @@ public class ShareOfMarketHub : Hub
         {
             for (int i = 0; i < _originalValues.Length; i++)
             {
-                double change = (_random.NextDouble() * 25);
+                double change = _random.NextDouble() * 25;
                 double newValue = _originalValues[i] + (_originalValues[i] * change / 100);
                 _modifiedValues[i] = Math.Round(newValue, 2);
                 _cryptocurrencies[i] = new()
