@@ -1,12 +1,18 @@
 using ProfitablePerson.ChartHub;
+using ProfitablePerson.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 #region ConfigureServices
 
 builder.Services.AddSignalR();
-builder.Services.AddSingleton<Random>();
-builder.Services.AddScoped<ProfitablePersonHub>();
+
+var profitablePerson = builder.Configuration.GetSection("ProfitablePerson").Get<ProfitablePersonOption>();
+
+if(profitablePerson is not null)
+    builder.Services.AddSingleton(profitablePerson);
+
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp",

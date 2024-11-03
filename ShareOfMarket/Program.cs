@@ -1,10 +1,17 @@
-using ShareOfMarket.ChartHub;
+
+using ShareOfMarket.Hubs;
+using ShareOfMarket.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 #region ConfigureServices
 
 builder.Services.AddSignalR();
+var cryptoShareOption = builder.Configuration.GetSection("CryptoShareOption").Get<CryptoOption>();
+
+if (cryptoShareOption is not null)
+    builder.Services.AddSingleton(cryptoShareOption);
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp",
